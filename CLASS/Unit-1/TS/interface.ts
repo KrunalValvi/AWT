@@ -5,8 +5,8 @@ interface person{
     showdetail():void;
 }
 
-let P1:person = {
-    name2:"Mayur",
+let p1:person = {
+    name2:"Krunal",
     salary2:1,
     empid:102,
     showdetail():void{

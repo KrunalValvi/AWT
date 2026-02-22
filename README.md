@@ -178,5 +178,5 @@ npx tsc
 
 ## 👤 Author
 
-**Valvi**  
+**Krunal Valvi**  
 Advanced Web Technology — MCA

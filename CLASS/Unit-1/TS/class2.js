@@ -11,6 +11,6 @@ var Employee = /** @class */ (function () {
     };
     return Employee;
 }());
-var e2 = new Employee("Mayur", 200, 3000);
+var e2 = new Employee("Krunal", 200, 3000);
 console.log(e2.name1);
 e2.showdetails();

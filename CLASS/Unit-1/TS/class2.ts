@@ -1,4 +1,4 @@
-import { Collection } from "mongoose";
+// import { Collection } from "mongoose";
 
 class Employee{
     public name1:string;
@@ -17,7 +17,7 @@ class Employee{
 
 }
 
-let e2 = new Employee("Mayur",200,3000);
+let e2 = new Employee("Krunal",200,3000);
 console.log(e2.name1);
 
 e2.showdetails();

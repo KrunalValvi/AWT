@@ -1,5 +1,5 @@
 var P1 = {
-    name2: "Mayur",
+    name2: "Krunal",
     salary2: 1,
     empid: 102,
     showdetail: function () {
