@@ -1,0 +1,65 @@
+//if resturant is open then order food
+// food check
+// order food
+// deliver food
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function checkResturantStatus(){
+            return new Promise(function(resolve, reject){
+                setTimeout(() => {
+                    let isOpen = true; // change to false to test rejection
+                    if(isOpen){
+                        resolve("Resturant is open");
+                    } else {
+                        reject("Resturant is closed");
+                    }
+                }, 1000);
+            });
+        }
+
+        function orderFood(){
+            return new Promise(function(resolve, reject){
+                setTimeout(() => {
+                    let food = "Pizza";
+                    resolve(food);
+                }, 2000);
+            });
+        }
+
+        function deliverFood(food){
+            return new Promise(function(resolve, reject){
+                setTimeout(() => {
+                    let message = food + " has been delivered";
+                    resolve(message);
+                }, 1000);
+            });
+        }
+
+        async function processOrder(){
+            try {
+                let status = await checkResturantStatus();
+                console.log(status);
+
+                let food = await orderFood();
+                console.log("Ordered: " + food);
+
+                let deliveryMessage = await deliverFood(food);
+                console.log(deliveryMessage);
+            } catch(error) {
+                console.log(error);
+            }
+        }
+
+        processOrder();
+    </script>
+</body>
+</html>

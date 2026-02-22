@@ -1,0 +1,9 @@
+body{
+    background-color: cadetblue;
+    text-align: center;
+    margin-top: 200px;
+}
+#ip1,#btn{
+    height: 50px;
+    width: 200px;
+}

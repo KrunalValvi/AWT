@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // rest parameters
+     function greet(msg,...names){
+        console.log(msg);
+        console.log(names);
+
+     }
+     greet('hey','world','mayur','chavda');
+
+    // spread operator
+
+    let names = ['hey','world','mayur','chavda'];
+    
+    function greet(msg,n1,n2,n3,n4){
+        console.log(msg);
+        console.log(n1+n2+n3+n4);
+
+     }
+     greet("hello",...names);
+    </script>
+</body>
+</html>

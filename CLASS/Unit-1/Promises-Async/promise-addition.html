@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise Addition</title>
+</head>
+
+<body>
+    <script>
+        console.log('--- Promise Addition Chain ---');
+
+        const add = (a, b) =>
+            new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    if (a > 0 && b > 0) {
+                        resolve(a + b);
+                    } else {
+                        reject('Only positive numbers are allowed.');
+                    }
+                }, 280);
+            });
+
+        const runChain = async (first, second) => {
+            try {
+                const total = await add(first, second)
+                    .then((result) => {
+                        console.log('Step 1 · Sum is', result);
+                        return add(result, result);
+                    })
+                    .then((result) => {
+                        console.log('Step 2 · Doubled to', result);
+                        return add(result, result);
+                    })
+                    .then((result) => {
+                        console.log('Step 3 · Doubled again to', result);
+                        return result;
+                    });
+
+                console.log('Parity:', total % 2 === 0 ? 'Even' : 'Odd');
+                console.log('Sign:', total >= 0 ? 'Positive' : 'Negative');
+                console.log('Chain complete!');
+            } catch (error) {
+                console.log('Chain failed:', error);
+            }
+        };
+
+        runChain(2, 3);
+    </script>
+</body>
+
+</html>

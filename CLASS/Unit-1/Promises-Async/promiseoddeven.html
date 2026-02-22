@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function checkOddEven(num) {
+            let p = new Promise(function(resolve, reject) {
+                if (num >= 0) {
+                    if (num % 2 === 0) {
+                        resolve(num + " is Even");
+                    } else {
+                        resolve(num + " is Odd");
+                    }
+                } else {
+                    reject("Negative numbers not allowed");
+                }
+            });
+            return p;
+        }
+
+        // Example usage:
+        checkOddEven(4).then(function(result) {
+            console.log(result);
+            return checkOddEven(7);
+        }).then(function(result) {
+            console.log(result);
+            return checkOddEven(-3);
+        }).then(function(result) {
+            console.log(result);
+        }).catch(function(error) {
+            console.log(error);
+        });
+    </script>
+</body>
+</html>

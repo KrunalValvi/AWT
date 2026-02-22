@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise States</title>
+</head>
+
+<body>
+    <script>
+        console.log('--- Promise States Demo ---');
+
+        const makePromise = (label, shouldResolve, delay) =>
+            new Promise((resolve, reject) => {
+                console.log(label, 'pending');
+                setTimeout(() => {
+                    if (shouldResolve) {
+                        console.log(label, 'resolved');
+                        resolve(`${label} completed successfully`);
+                    } else {
+                        console.log(label, 'rejected');
+                        reject(`${label} encountered an error`);
+                    }
+                }, delay);
+            });
+
+        const promiseA = makePromise('Promise A', true, 600);
+        const promiseB = makePromise('Promise B', false, 900);
+
+        promiseA
+            .then((value) => console.log('Promise A result:', value))
+            .catch((error) => console.log('Promise A error:', error));
+
+        promiseB
+            .then((value) => console.log('Promise B result:', value))
+            .catch((error) => console.log('Promise B error:', error));
+    </script>
+</body>
+
+</html>

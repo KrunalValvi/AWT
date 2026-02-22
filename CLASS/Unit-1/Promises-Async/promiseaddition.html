@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function add(a, b) {
+            let p = new Promise(function(resolve,reject){
+                let success = true;
+                if(a>0 && b>0)
+                {
+                    resolve(a+b);
+                }
+                else{
+                    reject("negative numbers not allowed");
+                }
+            });
+
+            return p;
+        }
+        // add(2,3).then(function(result){
+        //     console.log("Addition is: " + result);
+        // }).catch(function(error){
+        //     console.log(error);
+        // });
+
+        // promise chaining
+        add(2,3).then(function(result){
+            console.log("Addition is: " + result);
+            return add(result,result);
+        }).then(function(result){
+            console.log("Addition is: " + result);
+            return add(result,result);
+        }).then(function(result){
+            console.log("Addition is: " + result);
+        })
+        .catch(function(error){
+            console.log(error);
+        });
+        // even or odd , positive or negative find it
+    </script>
+</body>
+</html>

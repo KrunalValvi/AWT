@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // async function greet() {
+        //     // return "Hello, World!";
+        //     console.log("Hello, World!");
+        // }
+
+        // // greet().then(message => console.log(message));
+        // greet();
+
+        // await -> executes last 
+        // async function greet() {
+        //     let y = await "Hello, World!";
+        //     console.log(y);
+        // }
+
+        // console.log(1);
+        // greet();
+        // console.log(2);
+        // console.log(3);
+        // console.log(4);
+        // console.log(5);
+        // console.log(6);
+        // console.log(7);
+        // console.log(8);
+
+
+        function getMarks(){
+            return new Promise(function(resolve, reject){
+                setTimeout(() => {
+                    let marks = 90;
+                    resolve(marks);
+                }, 2000);
+            });
+        }
+
+        async function showMarks(){
+            // getMarks().then(function(marks){
+            //     console.log("Marks obtained: " + marks);
+            // });
+            
+            console.log("Fetching marks...");
+            let marks = await getMarks();
+            console.log("Marks obtained: " + marks);
+        }
+
+        showMarks();
+
+    </script>
+</body>
+</html>

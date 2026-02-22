@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise Basics</title>
+</head>
+
+<body>
+    <script>
+        console.log('--- Promise Basics ---');
+
+        const runExample = () => {
+            const promise = new Promise((resolve, reject) => {
+                const success = Math.random() > 0.4;
+                setTimeout(() => {
+                    if (success) {
+                        resolve('promise resolved successfully');
+                    } else {
+                        reject('promise rejected');
+                    }
+                }, 400);
+            });
+
+            promise
+                .then((result) => console.log('Resolved:', result))
+                .catch((error) => console.log('Rejected:', error));
+        };
+
+        runExample();
+    </script>
+</body>
+
+</html>

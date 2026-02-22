@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function Patterns</title>
+</head>
+
+<body>
+    <script>
+        console.log('--- Arrow Function Samples ---');
+
+        const checkNumber = (value) => (value > 10 ? 'greater than 10' : '10 or below');
+        console.log('Check 5 =>', checkNumber(5));
+        console.log('Check 12 =>', checkNumber(12));
+
+        const greet = (message = 'Hello', name = 'world') => `${message}, ${name}!`;
+        console.log('Default greeting =>', greet());
+        console.log('Custom greeting =>', greet('Hey', 'Krunal'));
+
+        const greetMany = (message, ...names) => names.map((name) => `${message}, ${name}!`);
+        console.log('Rest parameter demo =>', greetMany('Hi', 'World', 'Krunal', 'Valvi'));
+
+        const names = ['Violet', 'Indigo', 'Blue', 'Green', 'Yellow'];
+        const [first, second, ...remaining] = names;
+        console.log('Destructured first =>', first);
+        console.log('Destructured second =>', second);
+        console.log('Remaining colors =>', remaining);
+
+        const name = 'Krunal';
+        const surname = 'Valvi';
+        console.log('Template literal =>', `Hello ${name} ${surname}`);
+
+        const person = { firstName: 'Krunal', nickname: 'KV' };
+        const formatNickname = ({ firstName, nickname }) => `${firstName} is often called "${nickname}"`;
+        console.log('Nickname =>', formatNickname(person));
+    </script>
+</body>
+
+</html>

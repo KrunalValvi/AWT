@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function checkPositiveNegative(num) {
+            let p = new Promise(function(resolve, reject) {
+                if (num > 0) {
+                    resolve(num + " is Positive");
+                } else if (num < 0) {
+                    resolve(num + " is Negative");
+                } else {
+                    reject("Zero is neither positive nor negative");
+                }
+            });
+            return p;
+        }
+
+        // Example usage:
+        checkPositiveNegative(5).then(function(result) {
+            console.log(result);
+            return checkPositiveNegative(-3);
+        }).then(function(result) {
+            console.log(result);
+            return checkPositiveNegative(0);
+        }).then(function(result) {
+            console.log(result);
+        }).catch(function(error) {
+            console.log(error);
+        });
+    </script>
+</body>
+</html>
