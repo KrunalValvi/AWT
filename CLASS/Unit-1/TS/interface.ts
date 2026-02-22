@@ -13,5 +13,5 @@ let p1:person = {
         console.log(`${this.name2}`);
     }
 }
-console.log(P1.empid+" "+P1.name2+" "+P1.salary2);
-P1.showdetail();
+console.log(p1.empid+" "+p1.name2+" "+p1.salary2);
+p1.showdetail();
